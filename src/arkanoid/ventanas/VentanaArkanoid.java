@@ -65,7 +65,7 @@ public class VentanaArkanoid extends Frame {
 			pintor.start();
 			setPrimeraVez(false);
 			setImagenBola(Toolkit.getDefaultToolkit().getImage("bolaRoja.png"));
-			setImagenFondo(Toolkit.getDefaultToolkit().getImage("fondoArkanoid.jpg"));
+			setImagenFondo(Toolkit.getDefaultToolkit().getImage("fondoArkanoid3.0.jpg"));
 
 		}
 		getExterno().clearRect(0, 0, 2550, 1200);
