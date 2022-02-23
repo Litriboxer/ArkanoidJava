@@ -13,6 +13,7 @@ import java.util.Set;
 
 import arkanoid.eventos.EventosMio;
 import arkanoid.hilos.Bola;
+import arkanoid.hilos.Nave;
 import arkanoid.hilos.Pintor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -35,6 +36,8 @@ public class VentanaArkanoid extends Frame {
 	private int dimensionBola;
 	private Image imagenBola;
 	private Image imagenFondo;
+	private Image imagenNave;
+	private Nave nave;
 
 	VentanaArkanoid() {
 		Properties properties = new Properties();
@@ -65,9 +68,11 @@ public class VentanaArkanoid extends Frame {
 			pintor.start();
 			setPrimeraVez(false);
 			setImagenBola(Toolkit.getDefaultToolkit().getImage("bolaRoja.png"));
+			setImagenNave(Toolkit.getDefaultToolkit().getImage("nave.png"));
 			setImagenFondo(Toolkit.getDefaultToolkit().getImage("fondoArkanoid3.0.jpg"));
 
 		}
+
 		getExterno().clearRect(0, 0, 2550, 1200);
 		getExterno().drawImage(getImagenFondo(), 0, 30, this.getWidth(), this.getHeight(), this);
 
@@ -76,19 +81,32 @@ public class VentanaArkanoid extends Frame {
 			getExterno().fillRect(bloque.getPosicionX(), bloque.getPosicionY(), bloque.getAncho(), bloque.getAlto());
 			getExterno().setColor(Color.BLUE);
 			getExterno().drawRect(bloque.getPosicionX(), bloque.getPosicionY(), bloque.getAncho(), bloque.getAlto());
-			//getExterno().drawString(String.valueOf(bloque.getGolpes()), bloque.getPosicionX() + bloque.getAncho() / 2,
-					//bloque.getPosicionY() + bloque.getAlto() / 2); //////////Estas dos lineas muestran en el bloque el numero de impactos restantes para deaparecer
+
+			// Estas lineas muestran en el bloque el numero de impactos restantes para deaparecer
+			
+			// getExterno().drawString(String.valueOf(bloque.getGolpes()),
+			// bloque.getPosicionX() + bloque.getAncho() / 2,
+			// bloque.getPosicionY() + bloque.getAlto() / 2);
 
 		}
 		if (getBola() != null)
-
-			// getExterno().fillOval(getBola().getPosicionX(), getBola().getPosicionY(),
-			// getBola().getDimension(),
-			// getBola().getDimension());
-
 			getExterno().drawImage(getImagenBola(), getBola().getPosicionX(), getBola().getPosicionY(),
 					getBola().getDimension(), getBola().getDimension(), this);
 		g.drawImage(getImagen(), 0, 0, this);
+		
+		//Pintado de bola sin imagen
+		
+		// getExterno().fillOval(getBola().getPosicionX(), getBola().getPosicionY(),
+					// getBola().getDimension(),
+					// getBola().getDimension());
+
+		
+		// Pinta nave pero parece que pinta y borra en bucle
+		
+		if (getNave() != null)
+			getExterno().drawImage(getImagenNave(), getNave().getPosicionX(), getNave().getPosicionY(),
+					getNave().getDimension(), getNave().getDimension(), this);
+		g.drawImage(getImagenNave(), 100, 1000, this);
 
 	}
 

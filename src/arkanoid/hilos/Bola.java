@@ -12,6 +12,9 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper=false)
 public class Bola extends Thread {
+	
+	private int posicionX, posicionY, sentidoX, sentidoY, incrementoX, incrementoY, dimension;
+	private VentanaArkanoid ventanaArkanoid;
 
 	public Bola(int posicionX, int posicionY, int sentidoX, int sentidoY, int incrementoX, int incrementoY,
 			int dimension, VentanaArkanoid ventanaArkanoid) {
@@ -26,8 +29,7 @@ public class Bola extends Thread {
 		this.ventanaArkanoid = ventanaArkanoid;
 	}
 
-	private int posicionX, posicionY, sentidoX, sentidoY, incrementoX, incrementoY, dimension;
-	private VentanaArkanoid ventanaArkanoid;
+	
 
 	@Override
 	public void run() {
