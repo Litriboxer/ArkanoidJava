@@ -62,7 +62,7 @@ public class VentanaArkanoid extends Frame {
 			setImagen(createImage(2550, 1200));
 			setExterno(getImagen().getGraphics());
 
-			TonteriasDeBloques tonterias = new TonteriasDeBloques(this);
+			CaracteristicasDeBloques tonterias = new CaracteristicasDeBloques(this);
 			tonterias.cargaBloques();
 			Pintor pintor = new Pintor(this);
 			pintor.start();
@@ -76,8 +76,6 @@ public class VentanaArkanoid extends Frame {
 		getExterno().clearRect(0, 0, 2550, 1200);
 		getExterno().drawImage(getImagenFondo(), 0, 30, this.getWidth(), this.getHeight(), this);
 
-		
-		
 		for (Bloque bloque : cuadrados) {
 			getExterno().setColor(bloque.getColor());
 			getExterno().fillRect(bloque.getPosicionX(), bloque.getPosicionY(), bloque.getAncho(), bloque.getAlto());
@@ -90,16 +88,16 @@ public class VentanaArkanoid extends Frame {
 			// getExterno().drawString(String.valueOf(bloque.getGolpes()),
 			// bloque.getPosicionX() + bloque.getAncho() / 2,
 			// bloque.getPosicionY() + bloque.getAlto() / 2);
-			
-			
-			// Pinta nave pero parece que pinta y borra en bucle
+
 			if (getNave() != null)
 				getExterno().drawImage(getImagenNave(), getNave().getPosicionX(), getNave().getPosicionY(),
 						getNave().getDimension(), getNave().getDimension(), this);
 			g.drawImage(getImagenNave(), 100, 1000, this);
+
 		}
 
-		
+		// Bola bola=new Bola(220, 960, 1, -1, 0, 0, 50, this);
+		// bola.start();
 
 		if (getBola() != null)
 			getExterno().drawImage(getImagenBola(), getBola().getPosicionX(), getBola().getPosicionY(),
@@ -111,8 +109,6 @@ public class VentanaArkanoid extends Frame {
 		// getExterno().fillOval(getBola().getPosicionX(), getBola().getPosicionY(),
 		// getBola().getDimension(),
 		// getBola().getDimension());
-
-		
 
 	}
 

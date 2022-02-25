@@ -1,8 +1,8 @@
 package arkanoid.hilos;
 
 import java.awt.Image;
-import arkanoid.ventanas.VentanaArkanoid;
 
+import arkanoid.ventanas.VentanaArkanoid;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -15,7 +15,7 @@ public class Nave extends Thread {
 	private VentanaArkanoid ventanaArkanoid;
 	private int posicionX, posicionY, sentidoX, sentidoY, incrementoX, incrementoY;
 	private Image image;
-	
+
 	public Nave(int ancho, int alto, VentanaArkanoid ventanaArkanoid, int posicionX, int posicionY, int sentidoX,
 			int sentidoY, int incrementoX, int incrementoY, Image image) {
 		super();
@@ -31,37 +31,14 @@ public class Nave extends Thread {
 		this.image = image;
 	}
 
-
-	
-
 	@Override
 	public void run() {
 		super.run();
 	}
-
-
-
 
 	public int getDimension() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-
-
-	
-
-
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
