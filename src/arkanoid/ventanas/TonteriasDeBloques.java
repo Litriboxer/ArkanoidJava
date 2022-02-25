@@ -28,7 +28,7 @@ public class TonteriasDeBloques {
 				int superior = 335;
 				int inferior = getVentanaArkanoid().getHeight() - 300;
 				int lateral = getVentanaArkanoid().getAncho() - 73;
-				int lateralDcho = getVentanaArkanoid().getAncho() +73;
+				int lateralDcho = getVentanaArkanoid().getAncho() + 73;
 				
 
 				getVentanaArkanoid().getCuadrados().add(dameBloque(inferior, superior, lateral, lateralDcho));

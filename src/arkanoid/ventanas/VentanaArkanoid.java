@@ -76,37 +76,43 @@ public class VentanaArkanoid extends Frame {
 		getExterno().clearRect(0, 0, 2550, 1200);
 		getExterno().drawImage(getImagenFondo(), 0, 30, this.getWidth(), this.getHeight(), this);
 
+		
+		
 		for (Bloque bloque : cuadrados) {
 			getExterno().setColor(bloque.getColor());
 			getExterno().fillRect(bloque.getPosicionX(), bloque.getPosicionY(), bloque.getAncho(), bloque.getAlto());
 			getExterno().setColor(Color.BLUE);
 			getExterno().drawRect(bloque.getPosicionX(), bloque.getPosicionY(), bloque.getAncho(), bloque.getAlto());
 
-			// Estas lineas muestran en el bloque el numero de impactos restantes para deaparecer
-			
+			// Estas lineas muestran en el bloque el numero de impactos restantes para
+			// deaparecer
+
 			// getExterno().drawString(String.valueOf(bloque.getGolpes()),
 			// bloque.getPosicionX() + bloque.getAncho() / 2,
 			// bloque.getPosicionY() + bloque.getAlto() / 2);
-
+			
+			
+			// Pinta nave pero parece que pinta y borra en bucle
+			if (getNave() != null)
+				getExterno().drawImage(getImagenNave(), getNave().getPosicionX(), getNave().getPosicionY(),
+						getNave().getDimension(), getNave().getDimension(), this);
+			g.drawImage(getImagenNave(), 100, 1000, this);
 		}
+
+		
+
 		if (getBola() != null)
 			getExterno().drawImage(getImagenBola(), getBola().getPosicionX(), getBola().getPosicionY(),
 					getBola().getDimension(), getBola().getDimension(), this);
 		g.drawImage(getImagen(), 0, 0, this);
-		
-		//Pintado de bola sin imagen
-		
+
+		// Pintado de bola sin imagen
+
 		// getExterno().fillOval(getBola().getPosicionX(), getBola().getPosicionY(),
-					// getBola().getDimension(),
-					// getBola().getDimension());
+		// getBola().getDimension(),
+		// getBola().getDimension());
 
 		
-		// Pinta nave pero parece que pinta y borra en bucle
-		
-		if (getNave() != null)
-			getExterno().drawImage(getImagenNave(), getNave().getPosicionX(), getNave().getPosicionY(),
-					getNave().getDimension(), getNave().getDimension(), this);
-		g.drawImage(getImagenNave(), 100, 1000, this);
 
 	}
 
