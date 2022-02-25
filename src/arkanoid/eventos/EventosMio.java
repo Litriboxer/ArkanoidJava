@@ -9,12 +9,12 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Data
-@EqualsAndHashCode(callSuper=false)
+@EqualsAndHashCode(callSuper = false)
 
 public class EventosMio extends GestorEventosAdapter {
 
 	private VentanaArkanoid ventanaArkanoid;
-	
+
 	@Override
 	public void windowClosing(WindowEvent e) {
 		System.out.println();
@@ -22,19 +22,10 @@ public class EventosMio extends GestorEventosAdapter {
 	}
 
 	public EventosMio(VentanaArkanoid ventanaArkanoid) {
-		System.out.println("constructor:"+ ventanaArkanoid);
+		System.out.println("constructor:" + ventanaArkanoid);
 		this.ventanaArkanoid = ventanaArkanoid;
-		
-		//Pinta composición de ventana y opciones en consola
-	}
 
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		
-		Bola bola=new Bola(e.getX(),getVentanaArkanoid().getHeight()-60,1,1,1,1,getVentanaArkanoid().getDimensionBola(),getVentanaArkanoid());
-		getVentanaArkanoid().setBola(bola);
-		bola.start();
-				
+		// Pinta composición de ventana y opciones en consola
 	}
 
 	public VentanaArkanoid getVentanaArkanoid() {
@@ -45,6 +36,14 @@ public class EventosMio extends GestorEventosAdapter {
 		this.ventanaArkanoid = ventanaArkanoid;
 	}
 
-	
-	
+	@Override
+	public void mouseClicked(MouseEvent e) {
+
+		Bola bola = new Bola(e.getX(), getVentanaArkanoid().getHeight(), 1, 1, 1, 1,
+				getVentanaArkanoid().getDimensionBola(), getVentanaArkanoid());
+		getVentanaArkanoid().setBola(bola);
+		bola.start();
+		super.mouseClicked(e);
+	}
+
 }
