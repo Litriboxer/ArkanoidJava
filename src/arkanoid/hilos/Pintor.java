@@ -4,25 +4,26 @@ import arkanoid.ventanas.VentanaArkanoid;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper=false)
 @AllArgsConstructor
 public class Pintor extends Thread {
-
+	
 	private VentanaArkanoid ventanaArkanoid;
-
+	
+	
 	@Override
 	public void run() {
-		while (true) {
+		while(true) {
 			getVentanaArkanoid().repaint();
 			try {
 				Thread.sleep(0);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-
+			
 		}
 	}
+	
 
 }
