@@ -22,10 +22,10 @@ public class EventosMio extends GestorEventosAdapter {
 	}
 
 	public EventosMio(VentanaArkanoid ventanaArkanoid) {
+		//Pinta composición de ventana y opciones en consola
 		System.out.println("constructor:"+ ventanaArkanoid);
 		this.ventanaArkanoid = ventanaArkanoid;
 		
-		//Pinta composición de ventana y opciones en consola
 	}
 
 	@Override

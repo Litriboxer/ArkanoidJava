@@ -16,6 +16,6 @@ public class Bloque {
 	private int posicionX;
 	private int posicionY;
 	private int golpes;
-	private Color color;
+	protected Color color;
 	
 }

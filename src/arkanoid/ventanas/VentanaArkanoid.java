@@ -52,8 +52,7 @@ public class VentanaArkanoid extends Frame {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-//		this.addWindowListener(new EventosMio(this));
-//		this.addMouseListener(new EventosMio(this));
+		
 		EventosMio eventosMio = new EventosMio(this);
 		this.addWindowListener(eventosMio);
 		this.addMouseListener(eventosMio);
@@ -71,9 +70,8 @@ public class VentanaArkanoid extends Frame {
 			pintor.start();
 			setPrimeraVez(false);
 			setImagenBola(Toolkit.getDefaultToolkit().getImage("bolaRoja.png"));
-			setImagenNave(Toolkit.getDefaultToolkit().getImage("nave.png"));
+			setImagenNave(Toolkit.getDefaultToolkit().getImage("nave2.0.png"));
 			setImagenFondo(Toolkit.getDefaultToolkit().getImage("fondoArkanoid3.0.jpg"));
-//*************
 			nave = new Nave(getAncho()*2,getAlto(),100,1000,10,getImagenNave());
 		}
 
@@ -86,26 +84,12 @@ public class VentanaArkanoid extends Frame {
 			getExterno().setColor(Color.BLUE);
 			getExterno().drawRect(bloque.getPosicionX(), bloque.getPosicionY(), bloque.getAncho(), bloque.getAlto());
 
-			// Estas lineas muestran en el bloque el numero de impactos restantes para deaparecer
 			
-			// getExterno().drawString(String.valueOf(bloque.getGolpes()),
-			// bloque.getPosicionX() + bloque.getAncho() / 2,
-			// bloque.getPosicionY() + bloque.getAlto() / 2);
-
 		}
 		if (getBola() != null)
 			getExterno().drawImage(getImagenBola(), getBola().getPosicionX(), getBola().getPosicionY(),
 					getBola().getDimension(), getBola().getDimension(), this);
-//		g.drawImage(getImagen(), 0, 0, this);
 		
-		//Pintado de bola sin imagen
-		
-		// getExterno().fillOval(getBola().getPosicionX(), getBola().getPosicionY(),
-					// getBola().getDimension(),
-					// getBola().getDimension());
-
-		
-		// Pinta nave pero parece que pinta y borra en bucle
 		
 		if (getNave() != null)
 			getExterno().drawImage(nave.getImage(), getNave().getPosicionX(), getNave().getPosicionY(),

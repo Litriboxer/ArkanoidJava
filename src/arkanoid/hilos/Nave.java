@@ -15,20 +15,12 @@ public class Nave{
 	
 	public Nave(int ancho, int alto,int posicionX, int posicionY, int incrementoX, Image image) {
 		super();
-		this.ancho = ancho;
-		this.alto = alto;
+		this.ancho = 175;
+		this.alto = 35;
 		this.posicionX = posicionX;
 		this.posicionY = posicionY;
 		this.incrementoX = incrementoX;
 		this.image = image;
 	}
 
-/*
-	public int getDimension() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-*/		
-	
 }

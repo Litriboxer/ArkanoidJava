@@ -71,27 +71,20 @@ public class Bola extends Thread {
 						}
 						
 
-						
-						
 						c.setGolpes(c.getGolpes()-1);
-						if(c.getGolpes()==0)
 							
 						c.setGolpes(c.getGolpes());
 						if(c.getGolpes()<3) 
 							c.setColor(Color.GREEN);
+						
 						if(c.getGolpes()<2) 
 							c.setColor(Color.CYAN);
-						//if(c.getGolpes()<1) 
-							//c.setColor(Color.YELLOW);
 						
 						if(c.getGolpes()<1) 
 							getVentanaArkanoid().getCuadrados().remove(c);
 						
-						//getVentanaArkanoid().getCuadrados().remove(c);
 					}
 					
-					
-				
 				});
 				this.setPosicionX(this.getPosicionX() + this.getIncrementoX() * this.getSentidoX());
 				this.setPosicionY(this.getPosicionY() + this.getIncrementoY() * this.getSentidoY());
