@@ -1,12 +1,13 @@
 package arkanoid.ventanas;
 
-import java.awt.Color;
 import java.awt.geom.Rectangle2D;
 import java.util.HashSet;
 
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.awt.Color;
 
 @Data
 @Setter
@@ -27,7 +28,8 @@ public class CaracteristicasDeBloques {
 				int superior = 335;
 				int inferior = getVentanaArkanoid().getHeight() - 300;
 				int lateral = getVentanaArkanoid().getAncho() - 73;
-				int lateralDcho = getVentanaArkanoid().getAncho() + 73;
+				int lateralDcho = getVentanaArkanoid().getAncho() +73;
+				
 
 				getVentanaArkanoid().getCuadrados().add(dameBloque(inferior, superior, lateral, lateralDcho));
 			}
@@ -42,8 +44,7 @@ public class CaracteristicasDeBloques {
 		while (!fin) {
 			int aleatorioX = (int) (Math.random() * 10000);
 
-			if (aleatorioX > 73
-					&& aleatorioX < getVentanaArkanoid().getWidth() - getVentanaArkanoid().getAncho() - 73) {
+			if (aleatorioX > 73 && aleatorioX < getVentanaArkanoid().getWidth() - getVentanaArkanoid().getAncho() - 73) {
 				int aleatorioY = (int) (Math.random() * 10000);
 
 				if (aleatorioY > superior && aleatorioY < inferior - getVentanaArkanoid().getAlto()) {
