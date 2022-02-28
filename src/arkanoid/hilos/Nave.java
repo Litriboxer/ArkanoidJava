@@ -13,7 +13,7 @@ public class Nave{
 	private int posicionX, posicionY, incrementoX;
 	private Image image;
 	
-	public Nave(int ancho, int alto,int posicionX, int posicionY, int incrementoX, Image image) {
+	public Nave(int ancho, int alto,int posicionX, int posicionY, Image image) {
 		super();
 		this.ancho = 175;
 		this.alto = 35;
